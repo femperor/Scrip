@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Scrip
 //
-//  Created by WDC on 23/01/2018.
-//  Copyright © 2018 excelsecu. All rights reserved.
+//  Created by fire on 16/01/2018.
+//  Copyright © 2018 ZZStudio. All rights reserved.
 //
 
 import UIKit
