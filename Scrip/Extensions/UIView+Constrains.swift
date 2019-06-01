@@ -15,6 +15,6 @@ extension UIView {
             return
         }
         translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(constraints.flatMap{ $0 })
+        NSLayoutConstraint.activate(constraints.compactMap{ $0 })
     }
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F6602D12259D75900EBDEE0 /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6602D02259D75900EBDEE0 /* TalkViewController.swift */; };
+		9F6602D32259DB6200EBDEE0 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6602D22259DB6200EBDEE0 /* InputViewController.swift */; };
+		9F917E3D22A25672000067A4 /* ZZFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */; };
+		9F917E4022A266F7000067A4 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E3F22A266F7000067A4 /* Speech.framework */; };
+		9F917E4322A26794000067A4 /* ZZSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */; };
+		9F917E4522A267AC000067A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E4422A267AC000067A4 /* AVFoundation.framework */; };
 		FD836C33200E198000C773D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD836C32200E198000C773D9 /* AppDelegate.swift */; };
 		FD836C35200E198000C773D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD836C34200E198000C773D9 /* ViewController.swift */; };
 		FD836C38200E198000C773D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD836C36200E198000C773D9 /* Main.storyboard */; };
@@ -27,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F6602D02259D75900EBDEE0 /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
+		9F6602D22259DB6200EBDEE0 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZFloatingButton.swift; sourceTree = "<group>"; };
+		9F917E3F22A266F7000067A4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZSpeechRecognizer.swift; sourceTree = "<group>"; };
+		9F917E4422A267AC000067A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FD836C2F200E198000C773D9 /* Scrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD836C32200E198000C773D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD836C34200E198000C773D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,17 +69,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F917E4522A267AC000067A4 /* AVFoundation.framework in Frameworks */,
+				9F917E4022A266F7000067A4 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F6602CF2259D72D00EBDEE0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FD836C34200E198000C773D9 /* ViewController.swift */,
+				9F6602D02259D75900EBDEE0 /* TalkViewController.swift */,
+				9F6602D22259DB6200EBDEE0 /* InputViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9F917E3E22A266F6000067A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F917E4422A267AC000067A4 /* AVFoundation.framework */,
+				9F917E3F22A266F7000067A4 /* Speech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F917E4122A2677D000067A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FD836C26200E198000C773D9 = {
 			isa = PBXGroup;
 			children = (
 				FD836C31200E198000C773D9 /* Scrip */,
 				FD836C30200E198000C773D9 /* Products */,
+				9F917E3E22A266F6000067A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,13 +124,14 @@
 		FD836C31200E198000C773D9 /* Scrip */ = {
 			isa = PBXGroup;
 			children = (
+				9F917E4122A2677D000067A4 /* Model */,
+				9F6602CF2259D72D00EBDEE0 /* ViewController */,
 				FD836C60200E50A300C773D9 /* Fonts */,
 				FD836C57200E4C7700C773D9 /* Strings */,
 				FD836C4C200E395A00C773D9 /* Extensions */,
 				FD836C49200E343600C773D9 /* Constant */,
 				FD836C44200E2A5A00C773D9 /* view */,
 				FD836C32200E198000C773D9 /* AppDelegate.swift */,
-				FD836C34200E198000C773D9 /* ViewController.swift */,
 				FD836C36200E198000C773D9 /* Main.storyboard */,
 				FD836C39200E198000C773D9 /* Assets.xcassets */,
 				FD836C3B200E198000C773D9 /* LaunchScreen.storyboard */,
@@ -101,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				FD836C45200E2A9F00C773D9 /* UIImage+Logo.swift */,
+				9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -171,12 +215,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = ZZStudio;
 				TargetAttributes = {
 					FD836C2E200E198000C773D9 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 1010;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -222,13 +267,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6602D32259DB6200EBDEE0 /* InputViewController.swift in Sources */,
+				9F917E3D22A25672000067A4 /* ZZFloatingButton.swift in Sources */,
 				FD836C54200E488E00C773D9 /* UIColor+Scrip.swift in Sources */,
 				FD836C52200E479400C773D9 /* UILabel+Scrip.swift in Sources */,
 				FD836C46200E2A9F00C773D9 /* UIImage+Logo.swift in Sources */,
 				FD836C50200E46B600C773D9 /* UIFont+Scrip.swift in Sources */,
+				9F6602D12259D75900EBDEE0 /* TalkViewController.swift in Sources */,
 				FD836C35200E198000C773D9 /* ViewController.swift in Sources */,
 				FD836C4E200E398000C773D9 /* UIView+Constrains.swift in Sources */,
 				FD836C4B200E344500C773D9 /* Strings.swift in Sources */,
+				9F917E4322A26794000067A4 /* ZZSpeechRecognizer.swift in Sources */,
 				FD836C33200E198000C773D9 /* AppDelegate.swift in Sources */,
 				FD836C48200E342D00C773D9 /* Constant.swift in Sources */,
 			);
@@ -291,6 +340,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -298,6 +348,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -349,6 +400,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -356,6 +408,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -389,14 +442,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J5BVFFC7P4;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5QZKZTWHM6;
 				INFOPLIST_FILE = Scrip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zzstudio.Scrip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzstudio.scrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = devlop_sz;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -405,14 +459,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J5BVFFC7P4;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = V9QZ497YV9;
 				INFOPLIST_FILE = Scrip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zzstudio.Scrip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzstudio.scrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = es_inhouse_sz;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
