@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F6602D12259D75900EBDEE0 /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6602D02259D75900EBDEE0 /* TalkViewController.swift */; };
 		9F6602D32259DB6200EBDEE0 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6602D22259DB6200EBDEE0 /* InputViewController.swift */; };
 		9F917E3D22A25672000067A4 /* ZZFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */; };
 		9F917E4022A266F7000067A4 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E3F22A266F7000067A4 /* Speech.framework */; };
 		9F917E4322A26794000067A4 /* ZZSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */; };
 		9F917E4522A267AC000067A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E4422A267AC000067A4 /* AVFoundation.framework */; };
+		D6C7CC36A376E31A15F7A52A /* Pods_Scrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694883753FD757F51A9D99DF /* Pods_Scrip.framework */; };
 		FD836C33200E198000C773D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD836C32200E198000C773D9 /* AppDelegate.swift */; };
 		FD836C35200E198000C773D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD836C34200E198000C773D9 /* ViewController.swift */; };
 		FD836C38200E198000C773D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD836C36200E198000C773D9 /* Main.storyboard */; };
@@ -33,7 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F6602D02259D75900EBDEE0 /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
+		08A0A1549A9AD3B49E3C0116 /* Pods-Scrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrip.debug.xcconfig"; path = "Target Support Files/Pods-Scrip/Pods-Scrip.debug.xcconfig"; sourceTree = "<group>"; };
+		0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrip.release.xcconfig"; path = "Target Support Files/Pods-Scrip/Pods-Scrip.release.xcconfig"; sourceTree = "<group>"; };
+		694883753FD757F51A9D99DF /* Pods_Scrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6602D22259DB6200EBDEE0 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZFloatingButton.swift; sourceTree = "<group>"; };
 		9F917E3F22A266F7000067A4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
@@ -71,17 +73,27 @@
 			files = (
 				9F917E4522A267AC000067A4 /* AVFoundation.framework in Frameworks */,
 				9F917E4022A266F7000067A4 /* Speech.framework in Frameworks */,
+				D6C7CC36A376E31A15F7A52A /* Pods_Scrip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		718FDF656C3E0BE68832ECB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08A0A1549A9AD3B49E3C0116 /* Pods-Scrip.debug.xcconfig */,
+				0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9F6602CF2259D72D00EBDEE0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				FD836C34200E198000C773D9 /* ViewController.swift */,
-				9F6602D02259D75900EBDEE0 /* TalkViewController.swift */,
 				9F6602D22259DB6200EBDEE0 /* InputViewController.swift */,
 			);
 			path = ViewController;
@@ -92,6 +104,7 @@
 			children = (
 				9F917E4422A267AC000067A4 /* AVFoundation.framework */,
 				9F917E3F22A266F7000067A4 /* Speech.framework */,
+				694883753FD757F51A9D99DF /* Pods_Scrip.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +123,7 @@
 				FD836C31200E198000C773D9 /* Scrip */,
 				FD836C30200E198000C773D9 /* Products */,
 				9F917E3E22A266F6000067A4 /* Frameworks */,
+				718FDF656C3E0BE68832ECB7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD836C41200E198000C773D9 /* Build configuration list for PBXNativeTarget "Scrip" */;
 			buildPhases = (
+				E52780D242A6D01D635A15D4 /* [CP] Check Pods Manifest.lock */,
 				FD836C2B200E198000C773D9 /* Sources */,
 				FD836C2C200E198000C773D9 /* Frameworks */,
 				FD836C2D200E198000C773D9 /* Resources */,
+				614A53C26D24FDD369CBDC55 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +278,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		614A53C26D24FDD369CBDC55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Scrip/Pods-Scrip-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Scrip/Pods-Scrip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E52780D242A6D01D635A15D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Scrip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD836C2B200E198000C773D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -273,7 +340,6 @@
 				FD836C52200E479400C773D9 /* UILabel+Scrip.swift in Sources */,
 				FD836C46200E2A9F00C773D9 /* UIImage+Logo.swift in Sources */,
 				FD836C50200E46B600C773D9 /* UIFont+Scrip.swift in Sources */,
-				9F6602D12259D75900EBDEE0 /* TalkViewController.swift in Sources */,
 				FD836C35200E198000C773D9 /* ViewController.swift in Sources */,
 				FD836C4E200E398000C773D9 /* UIView+Constrains.swift in Sources */,
 				FD836C4B200E344500C773D9 /* Strings.swift in Sources */,
@@ -440,6 +506,7 @@
 		};
 		FD836C42200E198000C773D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08A0A1549A9AD3B49E3C0116 /* Pods-Scrip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -457,6 +524,7 @@
 		};
 		FD836C43200E198000C773D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -467,7 +535,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzstudio.scrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = es_inhouse_sz;
+				PROVISIONING_PROFILE_SPECIFIER = enterprize_sz_2020;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

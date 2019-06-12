@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ZZFloatingButton: UIView {
+class ZZFloatingButton: UIButton {
     
 }
