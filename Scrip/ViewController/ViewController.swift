@@ -40,6 +40,7 @@ class ViewController: UIViewController {
             }
             print("nothing")
         }
+       
     }
     
     private func animateLogo() {
@@ -98,5 +99,9 @@ class ViewController: UIViewController {
             message.widthAnchor.constraint(equalTo: logo.widthAnchor, multiplier: 1.0/0.618)])
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         self.present(InputViewController(), animated: true, completion: nil)
+    }
 }
 

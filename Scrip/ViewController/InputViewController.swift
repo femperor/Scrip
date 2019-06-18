@@ -17,9 +17,17 @@ class InputViewController: UIViewController {
     private var isRecording:Variable<Bool> = Variable<Bool>(false)
     private let disposeBag = DisposeBag()
     // 通话界面音频通话按钮，按住时开始通话，松开结束；可设置双击保持通话状态，具体待定
+    
+    override func loadView() {
+        view = UIView(frame: UIScreen.main.bounds)
+        view.backgroundColor = UIColor.green
+    }
+    
     private var microphoneFloatingButton: ZZFloatingButton {
         let btn = ZZFloatingButton()
-        
+        btn.setTitle("hehe", for: .normal)
+        btn.setTitle("selected", for: .selected)
+        btn.addTarget(self, action: #selector(microphone(sender:)), for: .touchUpInside)
         view.addSubview(btn)
         return btn
     }
@@ -28,27 +36,46 @@ class InputViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        layout();
+        
         bindings()
+        layout();
     }
     
     private func bindings() {
         isRecording.asObservable()
+            .debug()
             .bind(to: microphoneFloatingButton.rx.isSelected)
             .disposed(by: disposeBag)
         
         isRecording.asDriver()
             .drive(ZZSpeechRecognizer.shared.recognizing)
             .disposed(by: disposeBag)
+        
+        ZZSpeechRecognizer.shared.recognizing.asObservable()
+            .subscribe(onNext: { (on) in
+            print(on ? "On": "Off")
+        })
+        .disposed(by: disposeBag)
+  
     }
     
     private func layout() {
+        var bottomOffset:CGFloat = -10.0
+        if #available(iOS 11, *) {
+            bottomOffset += -additionalSafeAreaInsets.bottom
+        } else {
+            bottomOffset += -self.bottomLayoutGuide.length
+        }
         microphoneFloatingButton.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-10 + bottomOffset)
             make.centerX.equalToSuperview()
             make.width.equalTo(55)
             make.height.equalTo(55)
         }
+    }
+    
+    @objc private func microphone(sender: ZZFloatingButton) {
+        self.isRecording.value = !self.isRecording.value
     }
     /*
     // MARK: - Navigation

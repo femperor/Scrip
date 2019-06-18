@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>&quot;请允许使用麦克风&quot;</string>
+	<string>"请允许使用麦克风"</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>&quot;请允许语音识别&quot;</string>
+	<string>"请允许语音识别"</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>CircularPro-Bold.otf</string>
@@ -43,6 +43,9 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

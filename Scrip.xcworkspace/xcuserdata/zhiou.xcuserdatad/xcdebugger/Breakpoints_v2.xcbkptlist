@@ -1,44 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "7046489B-D607-464C-B54D-6BAAD64666C7"
-   type = "1"
+   uuid = "F7ECC55C-B37E-46DA-BE7B-6DFD8210D285"
+   type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "62C0DD39-656A-4D54-BAD4-937020A64840"
+            uuid = "C40697E4-1656-4A20-8707-5B5158D85107"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
-            timestampString = "581070514.7216311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "ensureAuthorization(block:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5FF0FF92-AAD8-41DF-834C-B6F30053AD01"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
-            timestampString = "581070514.722086"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "ensureAuthorization(block:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5FF0FF92-AAD8-41DF-834C-B6F30053AD01 - 42f1728c3b2f06f6"
+                  uuid = "C40697E4-1656-4A20-8707-5B5158D85107 - 42f1728c3b2f06f6"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -53,7 +35,7 @@
                   offsetFromSymbolStart = "976">
                </Location>
                <Location
-                  uuid = "5FF0FF92-AAD8-41DF-834C-B6F30053AD01 - 481c2ac1eefa36b7"
+                  uuid = "C40697E4-1656-4A20-8707-5B5158D85107 - 481c2ac1eefa36b7"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"

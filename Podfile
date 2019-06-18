@@ -6,7 +6,7 @@ target 'Scrip' do
   use_frameworks!
 
   # Pods for Scrip
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'SnapKit'
 end

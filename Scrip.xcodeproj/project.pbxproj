@@ -86,7 +86,6 @@
 				08A0A1549A9AD3B49E3C0116 /* Pods-Scrip.debug.xcconfig */,
 				0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
