@@ -75,55 +75,63 @@ class ZZSpeechRecognizer: NSObject {
     
     func start() {
         
-        if let recognitionTask = recognitionTask {
-            recognitionTask.cancel()
-            self.recognitionTask = nil
-        }
+        // Cancel the previous task if it's running.
+        recognitionTask?.cancel()
+        self.recognitionTask = nil
         
+        // Configure the audio session for the app.
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(.record)
-            try audioSession.setMode(.measurement)
+            try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-            
-        } catch _{
-            return
+        } catch {
+                
         }
-       
+        let inputNode = audioEngine.inputNode
+        
+        // Create and configure the speech recognition request.
         recognizerRequest = SFSpeechAudioBufferRecognitionRequest()
+        guard let recognitionRequest = recognizerRequest else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest object") }
+        recognitionRequest.shouldReportPartialResults = true
         
-        let inputNode = self.audioEngine.inputNode
+        // Keep speech recognition data on device
+        //        if #available(iOS 13, *) {
+        //            recognitionRequest.requiresOnDeviceRecognition = false
+        //        }
         
-        recognizerRequest?.shouldReportPartialResults = false
-        
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognizerRequest!, resultHandler: { (result, error) in
-            var finished = false
+        // Create a recognition task for the speech recognition session.
+        // Keep a reference to the task so that it can be canceled.
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { result, error in
+            var isFinal = false
             
             if let result = result {
-                print(result.bestTranscription.formattedString)
-//                finished = true
+                // Update the text view with the results.
+//                self.textView.text = result.bestTranscription.formattedString
+                isFinal = result.isFinal
+                print("Text \(result.bestTranscription.formattedString)")
             }
-            if error != nil || finished {
+            
+            if error != nil || isFinal {
+                // Stop recognizing speech if there is a problem.
                 self.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
-
+                
                 self.recognizerRequest = nil
-
                 self.recognitionTask = nil
             }
-        })
+        }
         
+        // Configure the microphone input.
         let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.removeTap(onBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             self.recognizerRequest?.append(buffer)
         }
         
         audioEngine.prepare()
         do {
-            try audioEngine.start()
-        } catch {
-            print("audio engin start error")
+        try audioEngine.start()
+        }catch {
+            
         }
  
     }
