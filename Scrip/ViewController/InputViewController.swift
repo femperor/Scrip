@@ -75,6 +75,12 @@ class InputViewController: UIViewController {
     }
     
     @objc private func microphone(sender: ZZFloatingButton) {
+        
+        if self.isRecording.value {
+            ZZSpeechRecognizer.shared.stop()
+        } else {
+            ZZSpeechRecognizer.shared.start()
+        }
         self.isRecording.value = !self.isRecording.value
     }
     /*

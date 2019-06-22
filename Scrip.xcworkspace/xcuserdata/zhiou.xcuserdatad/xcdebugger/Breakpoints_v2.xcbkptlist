@@ -12,10 +12,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
+            timestampString = "582865846.266966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "ensureAuthorization(block:)"
             landmarkType = "7">
             <Locations>
@@ -28,6 +29,7 @@
                   moduleName = "Scrip"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhiou/Documents/GitHub/Scrip/Scrip/Model/ZZSpeechRecognizer.swift"
+                  timestampString = "0"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
@@ -43,6 +45,7 @@
                   moduleName = "Scrip"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhiou/Documents/GitHub/Scrip/Scrip/Model/ZZSpeechRecognizer.swift"
+                  timestampString = "0"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
@@ -50,6 +53,102 @@
                   offsetFromSymbolStart = "244">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
+            timestampString = "582865846.268371"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "start()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Scrip.ZZSpeechRecognizer.start() -&gt; ()"
+                  moduleName = "Scrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhiou/Documents/GitHub/Scrip/Scrip/Model/ZZSpeechRecognizer.swift"
+                  timestampString = "582864250.212803"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "660">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.SFSpeechRecognitionResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Scrip.ZZSpeechRecognizer.start() -&gt; ()"
+                  moduleName = "Scrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhiou/Documents/GitHub/Scrip/Scrip/Model/ZZSpeechRecognizer.swift"
+                  timestampString = "582864250.2143511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
+            timestampString = "582865846.268684"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
+            timestampString = "582865846.268993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "stop()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
+            timestampString = "582865846.269292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "start()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
