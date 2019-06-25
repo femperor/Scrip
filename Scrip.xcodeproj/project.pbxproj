@@ -12,6 +12,7 @@
 		9F917E4022A266F7000067A4 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E3F22A266F7000067A4 /* Speech.framework */; };
 		9F917E4322A26794000067A4 /* ZZSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */; };
 		9F917E4522A267AC000067A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E4422A267AC000067A4 /* AVFoundation.framework */; };
+		9FE383CF22C2288400A6D39A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE383CE22C2288400A6D39A /* BaseView.swift */; };
 		D6C7CC36A376E31A15F7A52A /* Pods_Scrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694883753FD757F51A9D99DF /* Pods_Scrip.framework */; };
 		FD836C33200E198000C773D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD836C32200E198000C773D9 /* AppDelegate.swift */; };
 		FD836C35200E198000C773D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD836C34200E198000C773D9 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		9F917E3F22A266F7000067A4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZSpeechRecognizer.swift; sourceTree = "<group>"; };
 		9F917E4422A267AC000067A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9FE383CE22C2288400A6D39A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		FD836C2F200E198000C773D9 /* Scrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD836C32200E198000C773D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD836C34200E198000C773D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				FD836C45200E2A9F00C773D9 /* UIImage+Logo.swift */,
 				9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */,
+				9FE383CE22C2288400A6D39A /* BaseView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6602D32259DB6200EBDEE0 /* InputViewController.swift in Sources */,
+				9FE383CF22C2288400A6D39A /* BaseView.swift in Sources */,
 				9F917E3D22A25672000067A4 /* ZZFloatingButton.swift in Sources */,
 				FD836C54200E488E00C773D9 /* UIColor+Scrip.swift in Sources */,
 				FD836C52200E479400C773D9 /* UILabel+Scrip.swift in Sources */,

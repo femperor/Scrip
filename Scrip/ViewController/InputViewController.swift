@@ -19,26 +19,23 @@ class InputViewController: UIViewController {
     // 通话界面音频通话按钮，按住时开始通话，松开结束；可设置双击保持通话状态，具体待定
     
     override func loadView() {
-        view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = UIColor.green
+        view = BaseView(frame: UIScreen.main.bounds)
     }
     
-    private var microphoneFloatingButton: ZZFloatingButton {
-        let btn = ZZFloatingButton()
-        btn.setTitle("hehe", for: .normal)
-        btn.setTitle("selected", for: .selected)
-        btn.addTarget(self, action: #selector(microphone(sender:)), for: .touchUpInside)
-        view.addSubview(btn)
-        return btn
-    }
+    private let microphoneFloatingButton: ZZFloatingButton  = ZZFloatingButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        microphoneFloatingButton.setTitle("hehe", for: .normal)
+        microphoneFloatingButton.setTitle("selected", for: .selected)
         
+        microphoneFloatingButton.addTarget(self, action: #selector(microphone(sender:)), for: .touchUpInside)
+        view.addSubview(microphoneFloatingButton)
+        // Do any additional setup after loading the view.
         bindings()
         layout();
+       
+     
     }
     
     private func bindings() {
@@ -67,11 +64,12 @@ class InputViewController: UIViewController {
             bottomOffset += -self.bottomLayoutGuide.length
         }
         microphoneFloatingButton.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-10 + bottomOffset)
+            make.bottom.equalTo(bottomLayoutGuide.snp.top).offset(-10 + bottomOffset)
             make.centerX.equalToSuperview()
             make.width.equalTo(55)
             make.height.equalTo(55)
         }
+        microphoneFloatingButton.roundStyle()
     }
     
     @objc private func microphone(sender: ZZFloatingButton) {
