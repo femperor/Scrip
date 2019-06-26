@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F6602D32259DB6200EBDEE0 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6602D22259DB6200EBDEE0 /* InputViewController.swift */; };
-		9F917E3D22A25672000067A4 /* ZZFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */; };
+		9F917E3D22A25672000067A4 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E3C22A25672000067A4 /* FloatingButton.swift */; };
 		9F917E4022A266F7000067A4 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E3F22A266F7000067A4 /* Speech.framework */; };
 		9F917E4322A26794000067A4 /* ZZSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */; };
 		9F917E4522A267AC000067A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F917E4422A267AC000067A4 /* AVFoundation.framework */; };
@@ -38,7 +38,7 @@
 		0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrip.release.xcconfig"; path = "Target Support Files/Pods-Scrip/Pods-Scrip.release.xcconfig"; sourceTree = "<group>"; };
 		694883753FD757F51A9D99DF /* Pods_Scrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6602D22259DB6200EBDEE0 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
-		9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZFloatingButton.swift; sourceTree = "<group>"; };
+		9F917E3C22A25672000067A4 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		9F917E3F22A266F7000067A4 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		9F917E4222A26794000067A4 /* ZZSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZZSpeechRecognizer.swift; sourceTree = "<group>"; };
 		9F917E4422A267AC000067A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				FD836C45200E2A9F00C773D9 /* UIImage+Logo.swift */,
-				9F917E3C22A25672000067A4 /* ZZFloatingButton.swift */,
+				9F917E3C22A25672000067A4 /* FloatingButton.swift */,
 				9FE383CE22C2288400A6D39A /* BaseView.swift */,
 			);
 			path = view;
@@ -338,7 +338,7 @@
 			files = (
 				9F6602D32259DB6200EBDEE0 /* InputViewController.swift in Sources */,
 				9FE383CF22C2288400A6D39A /* BaseView.swift in Sources */,
-				9F917E3D22A25672000067A4 /* ZZFloatingButton.swift in Sources */,
+				9F917E3D22A25672000067A4 /* FloatingButton.swift in Sources */,
 				FD836C54200E488E00C773D9 /* UIColor+Scrip.swift in Sources */,
 				FD836C52200E479400C773D9 /* UILabel+Scrip.swift in Sources */,
 				FD836C46200E2A9F00C773D9 /* UIImage+Logo.swift in Sources */,
@@ -520,7 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzstudio.scrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = devlop_sz;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -539,7 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzstudio.scrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = enterprize_sz_2020;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

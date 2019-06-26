@@ -14,7 +14,6 @@ import SnapKit
 // 音频通话界面，主要由通话按钮和通话记录组成，纯界面，音频处理和转换文本流程由Model层进行
 class InputViewController: UIViewController {
     
-    private var isRecording:Variable<Bool> = Variable<Bool>(false)
     private let disposeBag = DisposeBag()
     // 通话界面音频通话按钮，按住时开始通话，松开结束；可设置双击保持通话状态，具体待定
     
@@ -22,36 +21,41 @@ class InputViewController: UIViewController {
         view = BaseView(frame: UIScreen.main.bounds)
     }
     
-    private let microphoneFloatingButton: ZZFloatingButton  = ZZFloatingButton()
+    private let microphoneFloatingButton: FloatingButton  = FloatingButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        microphoneFloatingButton.setTitle("hehe", for: .normal)
-        microphoneFloatingButton.setTitle("selected", for: .selected)
         
-        microphoneFloatingButton.addTarget(self, action: #selector(microphone(sender:)), for: .touchUpInside)
-        view.addSubview(microphoneFloatingButton)
-        // Do any additional setup after loading the view.
+        addSubviews()
         bindings()
         layout();
-       
-     
+    }
+    
+    private func addSubviews() {
+        view.addSubview(microphoneFloatingButton)
     }
     
     private func bindings() {
-        isRecording.asObservable()
-            .debug()
-            .bind(to: microphoneFloatingButton.rx.isSelected)
-            .disposed(by: disposeBag)
-        
-        isRecording.asDriver()
-            .drive(ZZSpeechRecognizer.shared.recognizing)
-            .disposed(by: disposeBag)
         
         ZZSpeechRecognizer.shared.recognizing.asObservable()
             .subscribe(onNext: { (on) in
             print(on ? "On": "Off")
         })
+        .disposed(by: disposeBag)
+        
+        microphoneFloatingButton.isPressing.asDriver()
+        .distinctUntilChanged()
+            .map({ (state) -> Bool in
+                switch state {
+                case .holding:
+                        return true
+                case .pause:
+                        fallthrough
+                case .stopped:
+                        return false
+                }
+            })
+        .drive(ZZSpeechRecognizer.shared.recognizing)
         .disposed(by: disposeBag)
   
     }
@@ -70,16 +74,6 @@ class InputViewController: UIViewController {
             make.height.equalTo(55)
         }
         microphoneFloatingButton.roundStyle()
-    }
-    
-    @objc private func microphone(sender: ZZFloatingButton) {
-        
-        if self.isRecording.value {
-            ZZSpeechRecognizer.shared.stop()
-        } else {
-            ZZSpeechRecognizer.shared.start()
-        }
-        self.isRecording.value = !self.isRecording.value
     }
     /*
     // MARK: - Navigation

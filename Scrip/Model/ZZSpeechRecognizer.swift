@@ -16,7 +16,7 @@ class ZZSpeechRecognizer: NSObject {
     
     static let shared = ZZSpeechRecognizer()
     
-    var recognizing: Variable<Bool> = Variable<Bool>(false)
+    let recognizing: Variable<Bool> = Variable<Bool>(false)
     
     private let callbackQueue = DispatchQueue(label: "com.zzstudio.speech.callback")
     
@@ -34,6 +34,21 @@ class ZZSpeechRecognizer: NSObject {
             recognizer?.delegate = self
             return recognizer
         }
+    }
+    
+    let diposeBag = DisposeBag()
+    
+    private override init() {
+        super.init()
+        recognizing.asObservable()
+            .subscribe(onNext: {
+                if $0 {
+                    self.start()
+                } else {
+                    self.stop()
+                }
+            })
+            .disposed(by: diposeBag)
     }
     
     func ensureAuthorization(block: @escaping (Bool) -> Void){
@@ -69,6 +84,8 @@ class ZZSpeechRecognizer: NSObject {
                 }
             case .notDetermined:
                 os_log("SFSpeedchRecognizer authorization status: not determined")
+            default:
+                os_log("SFSPeechRecognizer unknown status")
             }
         }
     }
@@ -94,19 +111,15 @@ class ZZSpeechRecognizer: NSObject {
         guard let recognitionRequest = recognizerRequest else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest object") }
         recognitionRequest.shouldReportPartialResults = true
         
-        // Keep speech recognition data on device
-        //        if #available(iOS 13, *) {
-        //            recognitionRequest.requiresOnDeviceRecognition = false
-        //        }
+         //Keep speech recognition data on device
+//        if #available(iOS 13, *) {
+//            recognitionRequest.requiresOnDeviceRecognition = false
+//        }
         
-        // Create a recognition task for the speech recognition session.
-        // Keep a reference to the task so that it can be canceled.
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
             
             if let result = result {
-                // Update the text view with the results.
-//                self.textView.text = result.bestTranscription.formattedString
                 isFinal = result.isFinal
                 print("Text \(result.bestTranscription.formattedString)")
             }
@@ -121,7 +134,6 @@ class ZZSpeechRecognizer: NSObject {
             }
         }
         
-        // Configure the microphone input.
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             self.recognizerRequest?.append(buffer)
@@ -129,9 +141,10 @@ class ZZSpeechRecognizer: NSObject {
         
         audioEngine.prepare()
         do {
-        try audioEngine.start()
-        }catch {
-            
+            try audioEngine.start()
+        }
+        catch {
+            print("audioEngine coundn't start")
         }
  
     }
@@ -141,7 +154,6 @@ class ZZSpeechRecognizer: NSObject {
             self.audioEngine.stop()
             recognizerRequest?.endAudio()
         }
-//        self.recognitionTask = nil
     }
     
 }

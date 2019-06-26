@@ -12,11 +12,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
-            timestampString = "582867071.853735"
+            timestampString = "583209088.518283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "ensureAuthorization(block:)"
             landmarkType = "7">
             <Locations>
@@ -62,11 +62,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scrip/Model/ZZSpeechRecognizer.swift"
-            timestampString = "582867071.854834"
+            timestampString = "583209088.51836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "stop()"
             landmarkType = "7">
          </BreakpointContent>

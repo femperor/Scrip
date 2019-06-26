@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         addSubviews()
         addConstraints()
         animateLogo()
-        ZZSpeechRecognizer().ensureAuthorization{ (success) -> (Void) in
+        ZZSpeechRecognizer.shared.ensureAuthorization{ (success) -> (Void) in
             if Thread.isMainThread {
                 print("main thread")
             } else {
