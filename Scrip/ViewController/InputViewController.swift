@@ -46,13 +46,16 @@ class InputViewController: UIViewController {
         microphoneFloatingButton.isPressing.asDriver()
         .distinctUntilChanged()
             .map({ (state) -> Bool in
+                print(state)
                 switch state {
                 case .holding:
-                        return true
+                    return true
                 case .pause:
-                        fallthrough
+                    fallthrough
+                case .canceled:
+                    fallthrough
                 case .stopped:
-                        return false
+                    return false
                 }
             })
         .drive(ZZSpeechRecognizer.shared.recognizing)

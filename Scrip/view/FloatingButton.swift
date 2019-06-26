@@ -18,6 +18,20 @@ class FloatingButton: UIView {
         case holding
         case pause
         case stopped
+        case canceled
+        
+        var description: String {
+            switch self {
+            case .holding:
+                return "holding state"
+            case .pause:
+                return "pause state"
+            case .stopped:
+                return "stopped"
+            case .canceled:
+                return "canceled"
+            }
+        }
     }
     
     let isPressing = Variable<state>(.stopped)
@@ -60,7 +74,11 @@ extension FloatingButton {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isPressing.value = .stopped
+        let touch = touches.randomElement()
+        if let point = touch?.location(in: self)
+        {
+            isPressing.value = self.layer.contains(point) ? .stopped : .canceled
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
