@@ -101,7 +101,10 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-         self.present(InputViewController(), animated: true, completion: nil)
+        let vc = InputViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .partialCurl
+         self.present(vc, animated: true, completion: nil)
     }
 }
 

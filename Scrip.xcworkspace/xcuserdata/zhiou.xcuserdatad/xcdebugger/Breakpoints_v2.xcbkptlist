@@ -17,7 +17,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "ensureAuthorization(block:)"
+            landmarkName = "authorization()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -67,7 +67,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
             endingLineNumber = "154"
-            landmarkName = "stop()"
+            landmarkName = "start()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

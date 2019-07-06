@@ -51,6 +51,21 @@ class ZZSpeechRecognizer: NSObject {
             .disposed(by: diposeBag)
     }
     
+    // 申请语音识别权限，如果申请过直接返回当前状态，否则弹框并返回用户选择结果
+    func authorization() -> Single<SFSpeechRecognizerAuthorizationStatus> {
+        return Observable<SFSpeechRecognizerAuthorizationStatus>.create { observer in
+            let status = SFSpeechRecognizer.authorizationStatus()
+            if case .notDetermined = status {
+                SFSpeechRecognizer.requestAuthorization({ (status) in
+                    observer.onNext(status)
+                })
+            } else {
+                observer.onNext(status)
+            }
+            return Disposables.create()
+        }.asSingle()
+    }
+    
     func ensureAuthorization(block: @escaping (Bool) -> Void){
         let status = SFSpeechRecognizer.authorizationStatus()
         if case .authorized =  status {
