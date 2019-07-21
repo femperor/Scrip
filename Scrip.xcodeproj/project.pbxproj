@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		08A0A1549A9AD3B49E3C0116 /* Pods-Scrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrip.debug.xcconfig"; path = "Target Support Files/Pods-Scrip/Pods-Scrip.debug.xcconfig"; sourceTree = "<group>"; };
 		0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrip.release.xcconfig"; path = "Target Support Files/Pods-Scrip/Pods-Scrip.release.xcconfig"; sourceTree = "<group>"; };
+		5DB2884426C5CC4663D1B2CC /* Pods-Scrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scrip/Pods-Scrip.release.xcconfig"; sourceTree = "<group>"; };
 		694883753FD757F51A9D99DF /* Pods_Scrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6602D22259DB6200EBDEE0 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		9F917E3C22A25672000067A4 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		9F917E4422A267AC000067A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9FCD1C2122D0824A00B978A4 /* SFSpeechRecognizer+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Rx.swift"; sourceTree = "<group>"; };
 		9FE383CE22C2288400A6D39A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		C45A4A30C46F14E09479D1A4 /* Pods-Scrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scrip/Pods-Scrip.debug.xcconfig"; sourceTree = "<group>"; };
 		FD836C2F200E198000C773D9 /* Scrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD836C32200E198000C773D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD836C34200E198000C773D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 			children = (
 				08A0A1549A9AD3B49E3C0116 /* Pods-Scrip.debug.xcconfig */,
 				0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */,
+				C45A4A30C46F14E09479D1A4 /* Pods-Scrip.debug.xcconfig */,
+				5DB2884426C5CC4663D1B2CC /* Pods-Scrip.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -292,8 +296,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Scrip/Pods-Scrip-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Scrip/Pods-Scrip-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -302,12 +307,13 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Scrip/Pods-Scrip-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scrip/Pods-Scrip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E52780D242A6D01D635A15D4 /* [CP] Check Pods Manifest.lock */ = {
@@ -513,7 +519,7 @@
 		};
 		FD836C42200E198000C773D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08A0A1549A9AD3B49E3C0116 /* Pods-Scrip.debug.xcconfig */;
+			baseConfigurationReference = C45A4A30C46F14E09479D1A4 /* Pods-Scrip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -531,7 +537,7 @@
 		};
 		FD836C43200E198000C773D9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ACAC3C63E98C9B3CEBFAAC9 /* Pods-Scrip.release.xcconfig */;
+			baseConfigurationReference = 5DB2884426C5CC4663D1B2CC /* Pods-Scrip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
